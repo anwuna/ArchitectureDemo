@@ -77,6 +77,7 @@ public final class NotificationHandler {
         return nil
     }
 
+    //TODO: Move to module. 
     var customDateDecodingStartegy: @Sendable (Decoder) throws -> Date {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .iso8601)

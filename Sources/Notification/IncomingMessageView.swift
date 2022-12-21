@@ -64,7 +64,7 @@ import Mocks
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        let character = MockProvider.sampleCharacters()[1]
+        let character = MockProvider.sampleCharacters().randomElement()!
         IncomingMessageView(character: character)
     }
 }

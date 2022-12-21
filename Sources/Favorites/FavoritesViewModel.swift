@@ -24,7 +24,7 @@ public class FavoritesViewModel: ObservableObject {
 
     func reorderFavorites(sourceIndex: IndexPath, destinationIndex: IndexPath) {
         let character = provider.favorites[sourceIndex.row]
-        // done delibrately to avoid applying the snapshot multiple times to the tableview subscribers.
+        // done delibrately to avoid applying the snapshot multiple times( i.e one for remove and one for insert) to the tableview.
         var tempFavorites = provider.favorites
         tempFavorites.remove(at: sourceIndex.row)
         tempFavorites.insert(character, at: destinationIndex.row)

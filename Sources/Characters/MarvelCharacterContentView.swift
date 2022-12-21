@@ -184,27 +184,16 @@ struct MarvelCharacterConfiguration: UIContentConfiguration {
 
 #if DEBUG
 import SwiftUIHelpers
+import Mocks
 
 struct MarvelCharacterContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let mockCharacter = MarvelCharacter(
-            id: 1011334,
-            name: "3-D Man",
-            description: "When I consider how my light is spent,Ere half my days, in this dark world and wide, And that one Talent which is death to hide",
-            modified: Date(),
-            thumbnail: Thumbnail(path:"http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: .jpg),
-            resourceURI: "",
-            comics: ComicList(available: 1, collectionURI: "", items: [], returned: 0),
-            series: ComicList(available: 0, collectionURI: "", items: [], returned: 1),
-            stories: StoryList(available: 15, collectionURI: "", items: [], returned: 0),
-            events: ComicList(available: 0, collectionURI: "", items: [], returned: 0),
-            urls: [])
-
+        let mockCharacter = MockProvider.sampleCharacters().randomElement()!
         let configuration = MarvelCharacterConfiguration(character: mockCharacter)
         MarvelCharacterContentView(configuration: configuration)
             .preview
-            .previewLayout(.fixed(width: 428, height: 120))
+            .previewLayout(.fixed(width: 428, height: 100))
     }
 }
 

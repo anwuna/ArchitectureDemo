@@ -162,8 +162,8 @@ extension EventsViewController: UISearchBarDelegate {
 
 extension EventsViewController: UITableViewDataSourcePrefetching {
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//        Task {
-//            await viewModel.fetchAdditionalCharactersIfNeeded(for: indexPaths)
-//        }
+        Task {
+            await viewModel.fetchAdditionalEventsIfNeeded(for: indexPaths)
+        }
     }
 }

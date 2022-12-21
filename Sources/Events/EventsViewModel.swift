@@ -33,8 +33,6 @@ public class EventsViewModel: ObservableObject {
     }
 
     func onViewDidLoad() async {
-//        let sampleEvents = MockProvider.sampleEvents()
-//        events = sampleEvents
         await fetchEvents()
     }
 
@@ -45,7 +43,6 @@ public class EventsViewModel: ObservableObject {
 
         isFetchInProgress = true
         do {
-            print("Fetching offset", offset)
             let events = try await apiClient.marvelEvents(nameStartsWith: nameStartsWith, limit: limit, offset: offset, orderBy: orderBy)
             if !events.isEmpty {
                 updateOffset()

@@ -10,6 +10,10 @@ import SharedModels
 import Combine
 
 class CharacterDetailViewController: UIViewController {
+    struct Constant {
+        static let imageWidth: CGFloat = 50
+    }
+
     var cancellable: Cancellable?
     let viewModel: CharacterDetailViewModel
 
@@ -54,7 +58,7 @@ class CharacterDetailViewController: UIViewController {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFill
             imageView.layer.masksToBounds = true
-            imageView.layer.cornerRadius = 25
+            imageView.layer.cornerRadius = Constant.imageWidth / 2
             let imageString = viewModel.character.thumbnail.url
             let url = URL(string: imageString)!
             imageView.loadAsync(url)
@@ -147,8 +151,8 @@ class CharacterDetailViewController: UIViewController {
         view.addSubview(contentStackView)
 
         NSLayoutConstraint.activate([
-            thumbNailImageView.heightAnchor.constraint(equalToConstant: 50),
-            thumbNailImageView.widthAnchor.constraint(equalToConstant: 50),
+            thumbNailImageView.widthAnchor.constraint(equalToConstant: Constant.imageWidth),
+            thumbNailImageView.heightAnchor.constraint(equalTo: thumbNailImageView.widthAnchor),
 
             contentStackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             contentStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),

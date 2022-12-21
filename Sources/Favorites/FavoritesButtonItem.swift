@@ -30,13 +30,11 @@ public class FavoritesButtonItem: UIBarButtonItem {
     }
 
     private func setup() {
-        FavoritesProvider.shared
-            .$favorites
-            .sink { [weak self] newFavorites in
-                self?.label.text = "\(newFavorites.count)"
-            }
-            .store(in: &cancellables)
+        setupView()
+        setupBinding()
+    }
 
+    private func setupView() {
         let starImageView = UIImageView(image: UIImage(systemName: "star.fill"))
         starImageView.translatesAutoresizingMaskIntoConstraints = false
         starImageView.tintColor = .orange
@@ -47,4 +45,14 @@ public class FavoritesButtonItem: UIBarButtonItem {
 
         customView = stackView
     }
+
+    private func setupBinding() {
+        FavoritesProvider.shared
+            .$favorites
+            .sink { [weak self] newFavorites in
+                self?.label.text = "\(newFavorites.count)"
+            }
+            .store(in: &cancellables)
+    }
+
 }

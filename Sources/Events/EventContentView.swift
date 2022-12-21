@@ -86,10 +86,7 @@ class EventContentView: UIView, UIContentView {
 
             thumbNailImageView.heightAnchor.constraint(equalToConstant: 50),
             thumbNailImageView.widthAnchor.constraint(equalToConstant: 50),
-
         ])
-
-
     }
 
     override func layoutSubviews() {
@@ -164,7 +161,7 @@ import Mocks
 
 struct EventContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let event = MockProvider.sampleEvents()[0]
+        let event = MockProvider.sampleEvents().randomElement()!
         let configuration = EventContentConfiguration(event: event)
         EventContentView(configuration: configuration)
             .preview

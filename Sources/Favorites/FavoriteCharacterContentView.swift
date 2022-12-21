@@ -43,7 +43,6 @@ class FavoriteCharacterContentView: UIView, UIContentView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     func setup() {
         let contentStackView = UIStackView(arrangedSubviews: [thumbNailImageView, nameLabel])
         contentStackView.translatesAutoresizingMaskIntoConstraints = false

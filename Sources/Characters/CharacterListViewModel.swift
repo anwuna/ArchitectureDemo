@@ -86,7 +86,6 @@ public class CharacterListViewModel: ObservableObject {
                 currentOffset += 1
             }
         }
-        print("only", currentOffset, "inserted")
         self.offset += currentOffset
         sortCharacters()
     }
