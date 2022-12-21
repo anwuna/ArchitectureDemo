@@ -183,7 +183,7 @@ struct MarvelCharacterConfiguration: UIContentConfiguration {
 
 
 #if DEBUG
-import SwiftUIHelpers
+import UIHelpers
 import Mocks
 
 struct MarvelCharacterContentView_Previews: PreviewProvider {

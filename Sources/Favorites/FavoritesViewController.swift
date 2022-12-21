@@ -8,7 +8,7 @@
 import UIKit
 import SharedModels
 import Combine
-import SwiftUIHelpers
+import UIHelpers
 
 public class FavoritesViewController: UIViewController {
     enum Section {

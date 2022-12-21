@@ -104,7 +104,7 @@ class CharacterDetailViewController: UIViewController {
 
         let favoritesRankButton: UIButton = {
             var configuration = UIButton.Configuration.borderedProminent()
-            configuration.title = "Favorite Rank"
+            configuration.title = "Show Rank"
             let button = UIButton(configuration: configuration, primaryAction: UIAction(handler: favoritesRankButtonTapped))
             button.translatesAutoresizingMaskIntoConstraints = false
             return button
@@ -191,7 +191,7 @@ class CharacterDetailViewController: UIViewController {
 
 
 #if DEBUG
-import SwiftUIHelpers
+import UIHelpers
 import Mocks
 
 struct CharacterDetailsViewController_Previews: PreviewProvider {

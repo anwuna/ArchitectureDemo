@@ -198,7 +198,7 @@ extension CharacterListViewController: UITableViewDataSourcePrefetching {
 }
 
 #if DEBUG
-import SwiftUIHelpers
+import UIHelpers
 
 struct CharacterListViewController_previews: PreviewProvider {
     static var previews: some View {

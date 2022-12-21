@@ -13,12 +13,12 @@ let package = Package(
         .library(name: "Characters", targets: ["Characters"]),
         .library(name: "Events", targets: ["Events"]),
         .library(name: "Favorites", targets: ["Favorites"]),
-        .library(name: "SwiftUIHelpers", targets: ["SwiftUIHelpers"]),
         .library(name: "APIClient", targets: ["APIClient"]),
         .library(name: "SharedModels", targets: ["SharedModels"]),
         .library(name: "AsyncImage", targets: ["AsyncImage"]),
         .library(name: "Mocks", targets: ["Mocks"]),
-        .library(name: "Notification", targets: ["Notification"])
+        .library(name: "Notification", targets: ["Notification"]),
+        .library(name: "UIHelpers", targets: ["UIHelpers"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-collections.git",
@@ -34,7 +34,7 @@ let package = Package(
                 ]),
         .target(name: "Characters",
                 dependencies: [
-                    "SwiftUIHelpers",
+                    "UIHelpers",
                     "SharedModels",
                     "APIClient",
                     "Favorites",
@@ -50,23 +50,19 @@ let package = Package(
                 dependencies: [
                     "Favorites",
                     "SharedModels",
-                    "SwiftUIHelpers",
+                    "UIHelpers",
                     "APIClient",
                     "Mocks"
                 ]),
         .target(name: "Favorites",
                 dependencies: [
                     "SharedModels",
-                    "SwiftUIHelpers",
+                    "UIHelpers",
                 ]),
         .testTarget(name: "FavoritesTests",
                     dependencies: [
                         "Favorites"
                     ]),
-        .target(name: "SwiftUIHelpers",
-                dependencies: [
-                    "AsyncImage"
-                ]),
         .target(name: "APIClient",
                 dependencies: ["SharedModels"]),
         .testTarget(name: "APIClientTests",
@@ -91,6 +87,10 @@ let package = Package(
                     "SharedModels",
                     "Mocks",
                     .product(name: "Ably", package: "ably-cocoa")
-                ])
+                ]),
+        .target(name: "UIHelpers",
+                dependencies: [
+                    "AsyncImage"
+                ]),
     ]
 )

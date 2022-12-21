@@ -156,7 +156,7 @@ struct EventContentConfiguration: UIContentConfiguration {
 }
 
 #if DEBUG
-import SwiftUIHelpers
+import UIHelpers
 import Mocks
 
 struct EventContentView_Previews: PreviewProvider {
