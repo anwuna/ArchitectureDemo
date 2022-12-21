@@ -35,11 +35,13 @@ struct IncomingMessageView: View {
                     }
                     VStack(alignment: .leading, spacing: 20) {
                         HStack {
-                            AsyncImage(url: URL(string: character.thumbnail.url)!) { phase in
-                                phase.image?.resizable()
+                            AsyncImage(url: URL(string: character.thumbnail.url)!) { image in
+                                image.resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(25)
                                     .frame(maxWidth: 50, maxHeight: 50)
+                            } placeholder: {
+                                ProgressView()
                             }
                             Text(character.name)
                                 .font(.title)
