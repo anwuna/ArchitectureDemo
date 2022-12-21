@@ -1,3 +1,3 @@
-# MyLibrary
+# ArchitectureDemo using Marvel APIs 
 
-A description of this package.
+A demonstration of MVVM using Marvel APIs
